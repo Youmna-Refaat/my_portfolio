@@ -1,0 +1,1 @@
+ /Users/lozy/FlutterWork/my_portfolio/.dart_tool/flutter_build/06cebba716e8a1c8bea244b0a1e43444/dart_build_result.json:  /Users/lozy/Development/flutter/bin/cache/dart-sdk/version /Users/lozy/FlutterWork/my_portfolio/.dart_tool/package_config.json /Users/lozy/FlutterWork/my_portfolio/pubspec.yaml
