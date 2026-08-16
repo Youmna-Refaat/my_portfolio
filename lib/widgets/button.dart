@@ -38,7 +38,14 @@ class Button extends StatelessWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Flexible(child: Image.asset(buttonData.icon, width: 20)),
+            Flexible(
+              child: Image.asset(
+                buttonData.icon,
+                width: 20,
+                errorBuilder: (context, error, stackTrace) =>
+                    const Icon(Icons.link, size: 20, color: Colors.white),
+              ),
+            ),
             8.setHorizontalSpace(),
             Flexible(
               child: Text(

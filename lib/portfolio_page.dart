@@ -9,6 +9,7 @@ import 'sections/contact_section.dart';
 import 'sections/experience_section.dart';
 import 'sections/home_section.dart';
 import 'sections/projects_section.dart';
+import 'sections/skills_section.dart';
 
 class PortfolioHomePage extends StatefulWidget {
   const PortfolioHomePage({super.key});
@@ -85,6 +86,17 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                                   TextButton(
                                     onPressed: () => scrollTo(1),
                                     child: Text(
+                                      'Skills',
+                                      style: AppTextStyles.styleRegular20(
+                                        context,
+                                      ).copyWith(fontSize: isMobile ? 12 : 20),
+                                    ),
+                                  ),
+                                  if (!isMobile)
+                                    0.02.width.setHorizontalSpace(),
+                                  TextButton(
+                                    onPressed: () => scrollTo(2),
+                                    child: Text(
                                       'Projects',
                                       style: AppTextStyles.styleRegular20(
                                         context,
@@ -94,7 +106,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                                   if (!isMobile)
                                     0.03.width.setHorizontalSpace(),
                                   TextButton(
-                                    onPressed: () => scrollTo(2),
+                                    onPressed: () => scrollTo(3),
                                     child: Text(
                                       'Experience',
                                       style: AppTextStyles.styleRegular20(
@@ -105,7 +117,7 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
                                   if (!isMobile)
                                     0.02.width.setHorizontalSpace(),
                                   TextButton(
-                                    onPressed: () => scrollTo(3),
+                                    onPressed: () => scrollTo(4),
                                     child: Text(
                                       'Contact',
                                       style: AppTextStyles.styleRegular20(
@@ -129,16 +141,18 @@ class _PortfolioHomePageState extends State<PortfolioHomePage> {
             Expanded(
               child: ScrollablePositionedList.builder(
                 itemScrollController: _scrollController,
-                itemCount: 4,
+                itemCount: 5,
                 itemBuilder: (context, index) {
                   switch (index) {
                     case 0:
                       return const HomeSection();
                     case 1:
-                      return const ProjectsSection();
+                      return const SkillsSection();
                     case 2:
-                      return const ExperienceSection();
+                      return const ProjectsSection();
                     case 3:
+                      return const ExperienceSection();
+                    case 4:
                       return const ContactSection();
                     default:
                       return SizedBox();

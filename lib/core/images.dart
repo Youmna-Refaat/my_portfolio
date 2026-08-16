@@ -25,4 +25,6 @@ class AppImages {
   static const String imagesEvently = "assets/images/evently.png";
   static const String imagesIslami = "assets/images/islami.png";
   static const String imagesBeSafe = "assets/images/besafe.png";
+  static const String imagesSCAChat = "assets/images/SCA Chat.jpeg";
+  static const String imagesSCAPortal = "assets/images/SCA Portal.png";
 }

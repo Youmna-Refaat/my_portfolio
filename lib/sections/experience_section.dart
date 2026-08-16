@@ -44,7 +44,7 @@ class ExperienceSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Junior Flutter Developer at SCA',
+                        'Flutter Developer at SCA',
                         style: AppTextStyles.styleRegular20(context),
                       ),
                       4.setVerticalSpace(),
@@ -96,7 +96,7 @@ class ExperienceSection extends StatelessWidget {
                       12.setHorizontalSpace(),
                       Expanded(
                         child: Text(
-                          'Junior Flutter Developer at SCA',
+                          'Flutter Developer at SCA',
                           style: AppTextStyles.styleRegular20(context),
                         ),
                       ),

@@ -4,6 +4,7 @@ import 'package:my_portfolio/core/extenstions/extension.dart';
 import '../../core/colors.dart';
 import '../core/images.dart';
 import '../core/text_styles.dart';
+import '../widgets/tech_icon.dart';
 
 class HomeSection extends StatelessWidget {
   const HomeSection({super.key});
@@ -27,18 +28,18 @@ class HomeSection extends StatelessWidget {
                 isMobile
                     ? Column(children: _buildHeaderContent(context, isMobile))
                     : Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: _buildHeaderContent(context, isMobile),
-                    ),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: _buildHeaderContent(context, isMobile),
+                      ),
                 LayoutBuilder(
                   builder: (context, constraints) {
                     final isNarrow = constraints.maxWidth < 600;
                     return isNarrow
                         ? Column(children: _buildExperienceContent(isMobile))
                         : Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: _buildExperienceContent(isMobile),
-                        );
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: _buildExperienceContent(isMobile),
+                          );
                   },
                 ),
 
@@ -80,17 +81,16 @@ List<Widget> _buildHeaderContent(BuildContext context, bool isMobile) {
         vertical: 0.01.height,
       ),
       Text(
-        "a Junior Flutter Developer with a strong foundation in mobile application development. I specialize in building cross-platform apps using Flutter and Dart, with a focus on creating dynamic, responsive, and user-friendly experiences. I'm passionate about learning new technologies, solving problems, writing clean, maintainable code and being part of collaborative teams where I can both contribute and grow. I’m always excited to bring ideas to life through code.",
+        "a Flutter Developer and Computer Engineering graduate with hands-on, real-world experience building scalable, cross-platform mobile applications using Flutter, Dart, and Firebase. I specialize in clean architecture, RESTful API integration, and state management to create dynamic, responsive, and user-friendly experiences. I'm passionate about learning new technologies, solving real-world problems, writing clean, maintainable code, and being part of collaborative teams where I can both contribute and grow.",
         maxLines: 10,
         overflow: TextOverflow.ellipsis,
         style: AppTextStyles.styleRegular16(context),
       ).setOnlyPadding(context, left: 0.05.width, right: 0.1.width),
       20.setVerticalSpace(),
       ElevatedButton(
-        onPressed:
-            () => _launchURL(
-              'https://drive.google.com/file/d/14pMeIgoojX68-RsB3iuu44c7rIYgNRax/view?usp=sharing',
-            ),
+        onPressed: () => _launchURL(
+          'https://drive.google.com/file/d/14pMeIgoojX68-RsB3iuu44c7rIYgNRax/view?usp=sharing',
+        ),
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.secondryTextColor.withAlpha(40),
         ),
@@ -122,89 +122,92 @@ List<Widget> _buildExperienceContent(bool isMobile) {
   return [
     isMobile
         ? SizedBox(
-          child: Column(
+            child: Column(
+              children: [
+                Text(
+                  "Experience with",
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.styleRegular35(null),
+                ),
+                20.setVerticalSpace(),
+                Wrap(
+                  spacing: 16,
+                  runSpacing: 16,
+                  alignment: WrapAlignment.center,
+                  children: _buildSkillIcons(),
+                ),
+              ],
+            ),
+          )
+        : Row(
             children: [
-              Text(
-                "Experience with",
-                textAlign: TextAlign.center,
-                style: AppTextStyles.styleRegular35(null),
+              SizedBox(
+                width: 0.2.width,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Image.asset(AppImages.imagesScar, fit: BoxFit.contain),
+                    Image.asset(
+                      AppImages.imagesGlasses,
+                      height: 0.2.height,
+                      fit: BoxFit.contain,
+                    ),
+                  ],
+                ),
               ),
-              20.setVerticalSpace(),
-              Wrap(
-                spacing: 16,
-                runSpacing: 16,
-                alignment: WrapAlignment.center,
-                children: _buildSkillIcons(),
+              SizedBox(width: 16),
+              SizedBox(
+                width: 0.5.width,
+                child: Column(
+                  children: [
+                    Text(
+                      "Experience with",
+                      textAlign: TextAlign.center,
+                      style: AppTextStyles.styleRegular35(null),
+                    ),
+                    20.setVerticalSpace(),
+                    Wrap(
+                      spacing: 16,
+                      runSpacing: 16,
+                      alignment: WrapAlignment.center,
+                      children: _buildSkillIcons(),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(width: 16),
+              SizedBox(
+                width: isMobile ? 0 : 0.2.width,
+                child: Image.asset(
+                  AppImages.imagesFootPrints,
+                  height: isMobile ? 0 : 0.35.height,
+                  fit: BoxFit.contain,
+                ),
               ),
             ],
           ),
-        )
-        : Row(
-          children: [
-            SizedBox(
-              width: 0.2.width,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Image.asset(AppImages.imagesScar, fit: BoxFit.contain),
-                  Image.asset(
-                    AppImages.imagesGlasses,
-                    height: 0.2.height,
-                    fit: BoxFit.contain,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(width: 16),
-            SizedBox(
-              width: 0.5.width,
-              child: Column(
-                children: [
-                  Text(
-                    "Experience with",
-                    textAlign: TextAlign.center,
-                    style: AppTextStyles.styleRegular35(null),
-                  ),
-                  20.setVerticalSpace(),
-                  Wrap(
-                    spacing: 16,
-                    runSpacing: 16,
-                    alignment: WrapAlignment.center,
-                    children: _buildSkillIcons(),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(width: 16),
-            SizedBox(
-              width: isMobile ? 0 : 0.2.width,
-              child: Image.asset(
-                AppImages.imagesFootPrints,
-                height: isMobile ? 0 : 0.35.height,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ],
-        ),
   ];
 }
 
 List<Widget> _buildSkillIcons() {
-  const icons = [
-    AppImages.imagesCpp,
-    AppImages.imagesDart,
-    AppImages.imagesFlutter,
-    AppImages.imagesFigma,
-    AppImages.imagesFirebase,
-    AppImages.imagesGit,
+  // Each entry pairs an asset logo with a Material-icon fallback, so the
+  // icon still renders (instead of leaving a blank circle) if the asset
+  // ever fails to load — see TechIcon for details.
+  const icons = <(String, IconData, String)>[
+    (AppImages.imagesCpp, Icons.memory_outlined, 'C++'),
+    (AppImages.imagesDart, Icons.code, 'Dart'),
+    (AppImages.imagesFlutter, Icons.flutter_dash, 'Flutter'),
+    (AppImages.imagesFigma, Icons.design_services_outlined, 'Figma'),
+    (AppImages.imagesFirebase, Icons.local_fire_department_outlined, 'Firebase'),
+    (AppImages.imagesGit, Icons.merge_type, 'Git'),
   ];
 
   return icons
       .map(
-        (img) => CircleAvatar(
-          radius: 35,
-          backgroundColor: AppColors.white,
-          child: Image.asset(img, width: 50, alignment: Alignment.center),
+        (entry) => TechIcon(
+          assetPath: entry.$1,
+          fallbackIcon: entry.$2,
+          semanticLabel: entry.$3,
         ),
       )
       .toList();
