@@ -34,6 +34,20 @@ class ProjectsSection extends StatelessWidget {
         'Biometric authentication and local encrypted storage for sensitive personal data.',
       ],
     ),
+    Project(
+      title: 'BeSafe',
+      year: '2024',
+      description:
+          'Safety and wellbeing app built with Flutter and Clean Architecture, connecting users with their supervisors for real-time monitoring, emergency response, and peace of mind.',
+      image: AppImages.imagesBeSafe,
+      highlights: [
+        'Dual-role experience for Users and Supervisors, each with a tailored dashboard.',
+        'Live location tracking and geofenced safe zones shown on Google Maps.',
+        'Real-time vitals and health condition monitoring shared with a supervisor.',
+        'Firebase Cloud Messaging push alerts for instant emergency notifications.',
+      ],
+      githubUrl: 'https://github.com/Youmna-Refaat/GraduationProjectAPP',
+    ),
   ];
 
   @override

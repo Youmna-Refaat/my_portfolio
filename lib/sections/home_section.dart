@@ -81,9 +81,7 @@ List<Widget> _buildHeaderContent(BuildContext context, bool isMobile) {
         vertical: 0.01.height,
       ),
       Text(
-        "a Flutter Developer and Computer Engineering graduate with hands-on, real-world experience building scalable, cross-platform mobile applications using Flutter, Dart, and Firebase. I specialize in clean architecture, RESTful API integration, and state management to create dynamic, responsive, and user-friendly experiences. I'm passionate about learning new technologies, solving real-world problems, writing clean, maintainable code, and being part of collaborative teams where I can both contribute and grow.",
-        maxLines: 10,
-        overflow: TextOverflow.ellipsis,
+        "a Flutter Developer with over 2 years of experience building scalable, cross-platform mobile applications using Flutter, Dart, and Firebase. I specialize in Clean Architecture, state management with Provider and BLoC/Cubit, RESTful API integration, and dependency injection with GetIt to create dynamic, responsive, and user-friendly experiences. I'm passionate about learning new technologies, solving real-world problems, writing clean, maintainable code, and being part of collaborative teams where I can both contribute and grow.",
         style: AppTextStyles.styleRegular16(context),
       ).setOnlyPadding(context, left: 0.05.width, right: 0.1.width),
       20.setVerticalSpace(),
@@ -198,7 +196,11 @@ List<Widget> _buildSkillIcons() {
     (AppImages.imagesDart, Icons.code, 'Dart'),
     (AppImages.imagesFlutter, Icons.flutter_dash, 'Flutter'),
     (AppImages.imagesFigma, Icons.design_services_outlined, 'Figma'),
-    (AppImages.imagesFirebase, Icons.local_fire_department_outlined, 'Firebase'),
+    (
+      AppImages.imagesFirebase,
+      Icons.local_fire_department_outlined,
+      'Firebase',
+    ),
     (AppImages.imagesGit, Icons.merge_type, 'Git'),
   ];
 
